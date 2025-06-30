@@ -32,3 +32,16 @@ def build_resnet1d(input_shape=(3000, 1), num_classes=1):
     model = Model(inputs, outputs)
     model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
     return model
+
+
+# Replace with your real ECG dataset
+X_train = np.random.rand(100, 3000, 1)
+y_train = np.random.randint(0, 2, 100)
+X_val = np.random.rand(20, 3000, 1)
+y_val = np.random.randint(0, 2, 20)
+
+model = build_resnet1d(input_shape=(3000, 1))  # or build_inception_time
+model.summary()
+
+model.fit(X_train, y_train, validation_data=(X_val, y_val), epochs=10, batch_size=32)
+
