@@ -114,3 +114,24 @@ for key, val in study.best_params.items():
     print(f"{key}: {val}")
 
 print(f"\n🎯 Best Validation Accuracy: {study.best_value:.4f}")
+
+
+
+
+
+
+# # Get and save the best model
+# best_trial = study.best_trial
+# best_model = build_model(best_trial)
+# best_model.fit(X_train, y_train,
+#                validation_data=(X_val, y_val),
+#                epochs=20,
+#                batch_size=32,
+#                callbacks=[EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)],
+#                verbose=0)
+
+# # Save the best model to a file
+# best_model.save("best_ecg_model.h5")
+
+# print("✅ Best model saved as 'best_ecg_model.h5'")
+
